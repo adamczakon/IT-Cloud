@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://ada63:ada63@clusternetworkapp-rkpeg.mongodb.net/test?retryWrites=true&w=majority"
+}
