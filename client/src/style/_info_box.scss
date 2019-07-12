@@ -1,7 +1,10 @@
 .box {
   width: 100%;
   background: #fff;
-  border-radius: 10px;
+
+  &-rounded {
+    border-radius: 10px;
+  }
 }
 
 .info-header {

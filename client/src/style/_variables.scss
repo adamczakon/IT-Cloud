@@ -8,6 +8,46 @@ $success-color: #28a745;
 
 $font-secondary: #888da8;
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #edf1f5;
+  color: #333;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+
+.alert {
+  padding: 0.8rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: var(--light-color);
+  color: #333;
+}
+
 .x-large {
   font-size: 4rem;
   line-height: 1.2;
@@ -153,6 +193,16 @@ $font-secondary: #888da8;
   outline: none;
 }
 
+.badge {
+  font-size: 0.9rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0.3rem;
+  background: var(--light-color);
+  color: #333;
+}
+
 .btn-block {
   display: block;
   width: 100%;
@@ -189,6 +239,14 @@ $font-secondary: #888da8;
   color: #fff;
 }
 
+.btn-secondary,
+.bg-secondary,
+.badge-secondary,
+.alert-secondary {
+  background: $dark-color;
+  color: #fff;
+}
+
 a {
   color: $primary-color;
   text-decoration: none;
@@ -213,7 +271,6 @@ a {
 .form textarea {
   display: block;
   width: 100%;
-  border-radius: 15px;
   font-size: 1rem;
   text-indent: 0.5rem;
   padding: 0.7rem;
@@ -224,6 +281,14 @@ a {
   }
 }
 
+.form-rounded input[type="text"],
+.form-rounded input[type="email"],
+.form-rounded input[type="password"],
+.form-rounded input[type="date"],
+.form-rounded select,
+.form-rounded textarea {
+  border-radius: 15px;
+}
 .form input[type="submit"],
 button {
   font: inherit;
@@ -260,4 +325,62 @@ button {
 
 .border-bottom {
   border-bottom: 1px solid rgba(240, 240, 240, 0.9);
+}
+
+.profiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 3%;
+
+  .profile {
+    background-color: #fff;
+    height: 340px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+
+    .profile-up {
+      text-align: center;
+      padding: 20px 0;
+      height: 85%;
+    }
+
+    .profile-view {
+      border-top: 1px solid rgba($font-secondary, 0.3);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 15%;
+    }
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+
+    .profile {
+      width: 100%;
+    }
+  }
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.post-author {
+  display: flex;
+  flex-direction: row;
+}
+
+.round-img {
+  border-radius: 50%;
+}
+
+.profile-img {
+  width: 100px;
+}
+
+.post-img {
+  width: 75px;
 }

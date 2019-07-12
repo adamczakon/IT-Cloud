@@ -13,18 +13,18 @@ const PostItem = ({
   post: { _id, text, name, avatar, user, likes, comments, date },
   showActions
 }) => (
-  <div className='post bg-white p-1 my-1'>
-    <div>
+  <div className='box p-2 my-1 post-grid'>
+    <div className='post-header'>
       <Link to={`/profile/${user}`}>
-        <img className='round-img' src={avatar} alt='' />
-        <h4>{name}</h4>
+        <img className='post-img round-img' src={avatar} alt='' />
       </Link>
-    </div>
-    <div>
-      <p className='my-1'>{text}</p>
+      <h4 className='text-dark text-strong'>{name}</h4>
       <p className='post-date'>
         Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
       </p>
+    </div>
+    <div>
+      <p className='my-1'>{text}</p>
 
       {showActions && (
         <Fragment>

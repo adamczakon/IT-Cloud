@@ -8,7 +8,12 @@ import Experience from "./Experience";
 import Education from "./Education";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 
-const Dashboard = ({ getCurrentProfile, deleteAccount, auth: { user }, profile: { profile, loading } }) => {
+const Dashboard = ({
+  getCurrentProfile,
+  deleteAccount,
+  auth: { user },
+  profile: { profile, loading }
+}) => {
   useEffect(() => {
     getCurrentProfile();
   }, [getCurrentProfile]);
@@ -17,11 +22,11 @@ const Dashboard = ({ getCurrentProfile, deleteAccount, auth: { user }, profile: 
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className='large text-primary'>Dashboard</h1>
-      <p className='lead'>
-        <i className='fas fa-user' />
-        Welcome {user && user.name}
-      </p>
+      <div className='user-header'>
+        <img src={user.avatar} alt='' className='profile-img round-img' />
+        <p className='lead'>{user && user.name}</p>
+      </div>
+
       {profile !== null ? (
         <Fragment>
           <DashboardActions />

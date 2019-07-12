@@ -7,12 +7,12 @@ const PostForm = ({ addPost }) => {
   const [text, setText] = useState("");
 
   return (
-    <div className='post-form'>
-      <div className='bg-primary p'>
-        <h3>Say Something...</h3>
+    <div className='box'>
+      <div className='bg-grey p-1'>
+        <h4 className='text-secondary'>Create a post</h4>
       </div>
       <form
-        className='form my-1'
+        className='form'
         onSubmit={e => {
           e.preventDefault();
           addPost({ text });
@@ -28,7 +28,11 @@ const PostForm = ({ addPost }) => {
           onChange={e => setText(e.target.value)}
           required
         />
-        <input type='submit' className='btn btn-dark my-1' value='Submit' />
+        <div className='p-1'>
+          <button type='Submit' className='btn btn-primary'>
+            Publish
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -16,15 +16,14 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Spinner />
       ) : (
         <Fragment>
-          <h1 className='large text-primary' />
-          Developers
-          <p className='lead'>
-            <i className='fab fa-connectdevelop' />
-            Browse and connect with developers
-          </p>
+          <div className='box py-1 mb-2 text-center'>
+            <h3>Developers Profiles</h3>
+          </div>
           <div className='profiles'>
             {profiles.length > 0 ? (
-              profiles.map(profile => <ProfileItem key={profile._id} profile={profile} />)
+              profiles.map(profile => (
+                <ProfileItem key={profile._id} profile={profile} />
+              ))
             ) : (
               <h4>No profiles found...</h4>
             )}
