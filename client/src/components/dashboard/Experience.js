@@ -7,34 +7,33 @@ import { deleteExperience } from "../../actions/profile";
 
 const Experience = ({ experience, deleteExperience }) => {
   const experiences = experience.map(exp => (
-    <tr key={exp._id}>
-      <td>{exp.company}</td>
-      <td className='hide-sm'>{exp.title}</td>
-      <td>
+    <div className='p-2' key={exp._id}>
+      <p className='text-strong info-title'>
+        {exp.company}
+        <i
+          className='fas fa-minus-square info-delete'
+          onClick={() => deleteExperience(exp._id)}
+        />
+      </p>
+
+      <p className='text-secondary'>
         <Moment format='YYYY/MM/DD'>{moment.utc(exp.from)}</Moment> -{" "}
-        {exp.to === null ? " Now" : <Moment format='YYYY/MM/DD'>{moment.utc(exp.to)}</Moment>}
-      </td>
-      <td>
-        <button onClick={() => deleteExperience(exp._id)} className='btn btn-danger'>
-          Delete
-        </button>
-      </td>
-    </tr>
+        {exp.to === null ? (
+          " Now"
+        ) : (
+          <Moment format='YYYY/MM/DD'>{moment.utc(exp.to)}</Moment>
+        )}
+      </p>
+      <p className='mb-1 text-secondary'>{exp.title}</p>
+      <p className='text-justify text-secondary'>{exp.description}</p>
+    </div>
   ));
   return (
     <Fragment>
-      <h2 className='my-2'>Experience Credentials</h2>
-      <table className='table'>
-        <thead>
-          <tr>
-            <th>Company</th>
-            <th className='hide-sm'>Title</th>
-            <th className='hide-sm'>Years</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>{experiences}</tbody>
-      </table>
+      <div className='box my-3'>
+        <h4 className='info-header'>Experience and Employment</h4>
+        <div className='info-content'>{experiences}</div>
+      </div>
     </Fragment>
   );
 };

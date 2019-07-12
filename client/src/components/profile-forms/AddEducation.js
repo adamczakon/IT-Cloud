@@ -17,17 +17,24 @@ const AddEducation = ({ addEducation, history }) => {
 
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const { school, degree, fieldofstudy, from, to, current, description } = formData;
+  const {
+    school,
+    degree,
+    fieldofstudy,
+    from,
+    to,
+    current,
+    description
+  } = formData;
 
-  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
-    <Fragment>
-      <h1 className='large text-primary'>Add Your Education</h1>
-      <p className='lead'>
-        <i className='fas fa-code-branch' /> Add any school or bootcamp that you have attended
-      </p>
-      <small>* = required field</small>
+    <div className='box p-2'>
+      <h3 className='text-primary mb-2'>
+        <i class='fas fa-book-reader mr' /> Add Education
+      </h3>
       <form
         className='form'
         onSubmit={e => {
@@ -36,9 +43,10 @@ const AddEducation = ({ addEducation, history }) => {
         }}
       >
         <div className='form-group'>
+          <p className='text-strong mb ml-1'>University</p>
           <input
             type='text'
-            placeholder='* School or Bootcamp'
+            placeholder='School'
             name='school'
             value={school}
             onChange={e => onChange(e)}
@@ -46,6 +54,7 @@ const AddEducation = ({ addEducation, history }) => {
           />
         </div>
         <div className='form-group'>
+          <p className='text-strong mb ml-1'>Degree</p>
           <input
             type='text'
             placeholder='* Degree or Certificate'
@@ -56,6 +65,7 @@ const AddEducation = ({ addEducation, history }) => {
           />
         </div>
         <div className='form-group'>
+          <p className='text-strong mb ml-1'>Field of Study</p>
           <input
             type='text'
             placeholder='Field of Study'
@@ -65,11 +75,16 @@ const AddEducation = ({ addEducation, history }) => {
           />
         </div>
         <div className='form-group'>
-          <h4>From Date</h4>
-          <input type='date' name='from' value={from} onChange={e => onChange(e)} />
+          <p className='text-strong mb ml-1'>From</p>
+          <input
+            type='date'
+            name='from'
+            value={from}
+            onChange={e => onChange(e)}
+          />
         </div>
         <div className='form-group'>
-          <p>
+          <p className='text-strong mb ml-1'>
             <input
               type='checkbox'
               name='current'
@@ -84,7 +99,7 @@ const AddEducation = ({ addEducation, history }) => {
           </p>
         </div>
         <div className='form-group'>
-          <h4>To Date</h4>
+          <p className='text-strong mb ml-1'>To</p>
           <input
             type='date'
             name='to'
@@ -94,6 +109,7 @@ const AddEducation = ({ addEducation, history }) => {
           />
         </div>
         <div className='form-group'>
+          <p className='text-strong mb ml-1'>Description</p>
           <textarea
             name='description'
             cols='30'
@@ -103,12 +119,14 @@ const AddEducation = ({ addEducation, history }) => {
             onChange={e => onChange(e)}
           />
         </div>
-        <input type='submit' className='btn btn-primary my-1' />
-        <Link className='btn btn-light my-1' to='/dashboard'>
-          Go Back
+        <button type='submit' className='btn btn-primary my-1 btn-block'>
+          Save Changes
+        </button>
+        <Link className='btn btn-secondary my-1' to='/dashboard'>
+          Back To Profile
         </Link>
       </form>
-    </Fragment>
+    </div>
   );
 };
 

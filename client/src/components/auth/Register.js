@@ -14,7 +14,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   });
 
   const { name, email, password, password2 } = formData;
-  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   const onSubmit = e => {
     e.preventDefault();
     if (password !== password2) {
@@ -36,12 +37,25 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       </p>
       <form className='form' onSubmit={e => onSubmit(e)}>
         <div className='form-group'>
-          <input type='text' placeholder='Name' name='name' value={name} onChange={e => onChange(e)} />
+          <input
+            type='text'
+            placeholder='Name'
+            name='name'
+            value={name}
+            onChange={e => onChange(e)}
+          />
         </div>
         <div className='form-group'>
-          <input type='email' placeholder='Email Address' name='email' value={email} onChange={e => onChange(e)} />
+          <input
+            type='email'
+            placeholder='Email Address'
+            name='email'
+            value={email}
+            onChange={e => onChange(e)}
+          />
           <small className='form-text'>
-            This site uses Gravatar so if you want a profile image, use a Gravatar email
+            This site uses Gravatar so if you want a profile image, use a
+            Gravatar email
           </small>
         </div>
         <div className='form-group'>
