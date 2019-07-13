@@ -1,0 +1,73 @@
+@media (max-width: 700px) {
+  .container {
+    margin-top: 8rem;
+    padding: 0 1rem;
+  }
+
+  // Navbar
+  .navbar {
+    display: block;
+    text-align: center;
+
+    ul {
+      text-align: center;
+      justify-content: center;
+    }
+
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  // Information box
+  .info-content {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  .hide-sm {
+    display: none;
+  }
+
+  // Profiles grid
+  .profiles {
+    grid-template-columns: 1fr;
+
+    .profile {
+      width: 100%;
+    }
+  }
+
+  // Posts
+  .post-grid {
+    grid-template-rows: auto auto auto;
+  }
+
+  .post-header {
+    margin: auto;
+  }
+
+  .post-author {
+    text-align: center;
+  }
+
+  .post-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10%;
+    grid-row-gap: 1rem;
+  }
+}
+
+.round-img {
+  border-radius: 50%;
+}
+
+.profile-img {
+  width: 100px;
+  border: 4px solid $dark-color;
+}
+
+.post-img {
+  width: 75px;
+}

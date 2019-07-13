@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #edf1f5;
+  color: #333;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.box {
+  width: 100%;
+  background: #fff;
+
+  &-rounded {
+    border-radius: 10px;
+  }
+
+  &-info {
+    p {
+      @extend .text-secondary;
+    }
+  }
+}
+
+.info-header {
+  border-bottom: 1px solid rgba($font-secondary, 0.3);
+  padding: 1rem 2rem;
+}
+
+.info-content {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.info-delete {
+  margin-left: auto;
+  color: $primary-color;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.info-title {
+  display: flex;
+  align-items: center;
+}
+
+.user-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// developers profiles grid
+.profiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 3%;
+
+  .profile {
+    background-color: #fff;
+    height: 340px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+
+    .profile-up {
+      text-align: center;
+      padding: 20px 0;
+      height: 85%;
+    }
+
+    .profile-view {
+      border-top: 1px solid rgba($font-secondary, 0.3);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 15%;
+    }
+  }
+}
+
+// User profile
+.profile-header {
+  height: 200px;
+  position: relative;
+
+  .user-info {
+    z-index: 10;
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    display: flex;
+  }
+}
+
+.user-actions {
+  display: flex;
+  margin-left: auto;
+}
+
+//Posts
+.post-grid {
+  display: grid;
+}
+@media (min-width: 701px) {
+  .post-grid {
+    grid-template-columns: 15% 70% 15%;
+  }
+}

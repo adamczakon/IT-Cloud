@@ -5,9 +5,9 @@ $light-color: #f4f4f4;
 $grey-color: #fafbfd;
 $danger-color: #dc3545;
 $success-color: #28a745;
-
 $font-secondary: #888da8;
 
+/*
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,7 +30,7 @@ body {
   color: #333;
 }
 
-/* Utilities */
+/* Utilities 
 .container {
   max-width: 1200px;
   margin: auto;
@@ -50,7 +50,8 @@ body {
     display: none;
   }
 }
-
+*/
+/*
 .alert {
   padding: 0.8rem;
   margin: 1rem 0;
@@ -103,6 +104,7 @@ body {
   font-size: 0.9rem;
 }
 
+ Margin
 .p {
   padding: 0.5rem;
 }
@@ -131,7 +133,7 @@ body {
 .px {
   padding: 0 0.5rem;
 }
-/* Margin */
+
 .m {
   margin: 0.5rem;
 }
@@ -237,7 +239,7 @@ body {
   display: block;
   width: 100%;
 }
-
+ */
 .btn-primary,
 .bg-primary,
 .badge-primary,
@@ -282,7 +284,7 @@ a {
   text-decoration: none;
 }
 
-/* Forms */
+/* Forms 
 .form .form-group {
   margin: 1.2rem 0;
 }
@@ -420,6 +422,7 @@ button {
   margin-left: auto;
 }
 
+
 .post-grid {
   display: grid;
 }
@@ -463,3 +466,4 @@ button {
 .post-img {
   width: 75px;
 }
+*/

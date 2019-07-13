@@ -1,0 +1,122 @@
+$primary-color: #2c84dd;
+$secondary-color: #4f5467;
+$dark-color: #343a40;
+$light-color: #f4f4f4;
+$grey-color: #fafbfd;
+$danger-color: #dc3545;
+$success-color: #28a745;
+$font-secondary: #888da8;
+
+// Set text color based on background
+@function set-text-color($color) {
+  @if (lightness($color) > 60) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+
+// Margin & Padding
+$spaceamounts: (1, 2, 3, 4, 5);
+
+@each $space in $spaceamounts {
+  // All around margin
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+
+  .m {
+    margin: 0.5rem;
+  }
+
+  // Vertical Margin
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  .my {
+    margin: 0.5rem 0;
+  }
+
+  // Horizontal Margin
+  .mx-#{$space} {
+    margin: 0 #{$space}rem;
+  }
+
+  .mx {
+    margin: 0 0.5rem;
+  }
+
+  // Top Margin
+  .mt-#{$space} {
+    margin-top: #{$space}rem;
+  }
+
+  // Right Margin
+  .mr-#{$space} {
+    margin-right: #{$space}rem;
+  }
+
+  // Bottom Margin
+  .mb-#{$space} {
+    margin-bottom: #{$space}rem;
+  }
+
+  // Left Margin
+  .ml-#{$space} {
+    margin: 0 #{$space}rem;
+  }
+
+  // All around Padding
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+
+  .p {
+    padding: 0.5rem;
+  }
+
+  // Horizontal Padding
+  .px-#{$space} {
+    padding: 0 #{$space}rem;
+  }
+
+  .px {
+    padding: 0 0.5rem;
+  }
+
+  // Vertical Padding
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+
+  .py {
+    padding: 0.5rem 0;
+  }
+
+  // Left Padding
+  .pl-#{$space} {
+    padding-left: #{$space}rem;
+  }
+
+  // Right Padding
+  .pr-#{$space} {
+    padding-right: #{$space}rem;
+  }
+
+  // Bottom Padding
+  .pb-#{$space} {
+    padding-bottom: #{$space}rem;
+  }
+
+  // Top Padding
+  .pt-#{$space} {
+    padding-top: #{$space}rem;
+  }
+}
