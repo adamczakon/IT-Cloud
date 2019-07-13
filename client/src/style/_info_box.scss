@@ -5,6 +5,12 @@
   &-rounded {
     border-radius: 10px;
   }
+
+  &-info {
+    p {
+      @extend .text-secondary;
+    }
+  }
 }
 
 .info-header {

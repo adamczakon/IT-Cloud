@@ -18,16 +18,16 @@ const PostItem = ({
       <Link to={`/profile/${user}`}>
         <img className='post-img round-img' src={avatar} alt='' />
       </Link>
-      <h4 className='text-dark text-strong'>{name}</h4>
-      <p className='post-date'>
-        Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
-      </p>
     </div>
-    <div>
-      <p className='my-1'>{text}</p>
-
+    <div className='post-author'>
+      <h4 className='text-dark text-strong'>{name}</h4>
+      <p className='post-date text-small text-secondary'>
+        <span className='hide-sm'>Posted on</span>{" "}
+        <Moment format='YYYY/MM/DD'>{date}</Moment>
+      </p>
+      <p className='my-1 py-1 text-justify border-bottom'>{text}</p>
       {showActions && (
-        <Fragment>
+        <div className='post-buttons'>
           <button
             onClick={() => addLike(_id)}
             type='button'
@@ -44,9 +44,9 @@ const PostItem = ({
             <i className='fas fa-thumbs-down' />
           </button>
           <Link to={`/posts/${_id}`} className='btn btn-primary'>
-            Discussion{" "}
+            <i class='far fa-comments ' />
             {comments.length > 0 && (
-              <span className='comment-count'>{comments.length}</span>
+              <span className='comment-count ml'>{comments.length}</span>
             )}
           </Link>
           {!auth.loading && user === auth.user._id && (
@@ -58,7 +58,7 @@ const PostItem = ({
               <i className='fas fa-times' />
             </button>
           )}
-        </Fragment>
+        </div>
       )}
     </div>
   </div>

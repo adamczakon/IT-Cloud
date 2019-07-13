@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
-import DashboardActions from "./DashboardActions";
+import UserActions from "./UserActions";
 import Experience from "./Experience";
 import Education from "./Education";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 
-const Dashboard = ({
+const UserProfile = ({
   getCurrentProfile,
   deleteAccount,
   auth: { user },
@@ -22,14 +22,15 @@ const Dashboard = ({
     <Spinner />
   ) : (
     <Fragment>
-      <div className='user-header'>
-        <img src={user.avatar} alt='' className='profile-img round-img' />
-        <p className='lead'>{user && user.name}</p>
+      <div className='profile-header bg-dark'>
+        <div className='user-info'>
+          <img src={user.avatar} alt='' className='profile-img round-img' />
+          <p className='lead my-2 ml-1'>{user && user.name}</p>
+        </div>
       </div>
-
       {profile !== null ? (
         <Fragment>
-          <DashboardActions />
+          <UserActions />
           <Experience experience={profile.experience} />
           <Education education={profile.education} />
           <div className='my-2'>
@@ -53,7 +54,7 @@ const Dashboard = ({
   );
 };
 
-Dashboard.propTypes = {
+UserProfile.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
@@ -69,4 +70,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { getCurrentProfile, deleteAccount }
-)(Dashboard);
+)(UserProfile);
