@@ -13,14 +13,16 @@ const PostItem = ({
   post: { _id, text, name, avatar, user, likes, comments, date },
   showActions
 }) => (
-  <div className='box p-2 my-1 post-grid'>
+  <div className='box p-2 my-2 post-grid'>
     <div className='post-header'>
       <Link to={`/profile/${user}`}>
         <img className='post-img round-img' src={avatar} alt='' />
       </Link>
     </div>
     <div className='post-author'>
-      <h4 className='text-dark text-strong'>{name}</h4>
+      <Link to={`/profile/${user}`}>
+        <h4 className='text-dark text-strong'>{name}</h4>
+      </Link>
       <p className='post-date text-small text-secondary'>
         <span className='hide-sm'>Posted on</span>{" "}
         <Moment format='YYYY/MM/DD'>{date}</Moment>
@@ -46,7 +48,9 @@ const PostItem = ({
           <Link to={`/posts/${_id}`} className='btn btn-primary'>
             <i class='far fa-comments ' />
             {comments.length > 0 && (
-              <span className='comment-count ml'>{comments.length}</span>
+              <span className='comment-count ml'>
+                <span className='pl'>{comments.length}</span>
+              </span>
             )}
           </Link>
           {!auth.loading && user === auth.user._id && (

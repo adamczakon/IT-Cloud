@@ -39,34 +39,38 @@ const Profile = ({
           <div className='my-1'>
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
-            <div className='profile-exp bg-white p-2'>
-              <h2 className='text-primary'>Experience</h2>
+            <div className='box my-2'>
+              <h4 className='info-header'>Experience</h4>
               {profile.experience.length > 0 ? (
-                <Fragment>
+                <div className='info-content'>
                   {profile.experience.map(experience => (
                     <ProfileExperience
                       key={experience._id}
                       experience={experience}
                     />
                   ))}
-                </Fragment>
+                </div>
               ) : (
-                <h4>No experience credentials</h4>
+                <div className='p-2'>
+                  <h4>No information about experience</h4>
+                </div>
               )}
             </div>
-            <div className='profile-edu bg-white p-2'>
-              <h2 className='text-primary'>Education</h2>
+            <div className='box my-2'>
+              <h4 className='info-header'>Education</h4>
               {profile.education.length > 0 ? (
-                <Fragment>
+                <div className='info-content'>
                   {profile.education.map(education => (
                     <ProfileEducation
                       key={education._id}
                       education={education}
                     />
                   ))}
-                </Fragment>
+                </div>
               ) : (
-                <h4>No education credentials</h4>
+                <div className='p-2'>
+                  <h4>No information about education</h4>
+                </div>
               )}
             </div>
             {profile.githubusername && (

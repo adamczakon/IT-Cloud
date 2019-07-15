@@ -11,27 +11,30 @@ const CommentItem = ({
   auth,
   deleteComment
 }) => (
-  <div className='post bg-white p-1 my-1'>
-    <div>
+  <div className='box p-2 mt-4 post-grid'>
+    <div className='post-header'>
       <Link to={`/profile/${user}`}>
-        <img className='round-img' src={avatar} alt='' />
-        <h4>{name}</h4>
+        <img className='post-img round-img' src={avatar} alt='' />
       </Link>
     </div>
-    <div>
-      <p className='my-1'>{text}</p>
-      <p className='post-date'>
-        Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
+    <div className='post-author'>
+      <h4 className='text-dark text-strong'>{name}</h4>
+      <p className='post-date text-small text-secondary'>
+        <span className='hide-sm'> Posted on </span>{" "}
+        <Moment format='YYYY/MM/DD'>{date}</Moment>
       </p>
-      {!auth.loading && user === auth.user._id && (
-        <button
-          onClick={() => deleteComment(postId, _id)}
-          type='button'
-          className='btn btn-danger'
-        >
-          <i className='fas fa-times' />
-        </button>
-      )}
+      <p className='my-1 py-1 text-justify border-bottom'>{text}</p>
+      <div className='post-buttons'>
+        {!auth.loading && user === auth.user._id && (
+          <button
+            onClick={() => deleteComment(postId, _id)}
+            type='button'
+            className='btn btn-danger'
+          >
+            <i className='fas fa-times' />
+          </button>
+        )}
+      </div>
     </div>
   </div>
 );

@@ -13,10 +13,10 @@ const ProfileTop = ({
 }) => {
   return (
     <Fragment>
-      <div className='profile-header bg-dark'>
+      <div className='profile-header profile-background'>
         <div className='user-info'>
           <img className='profile-img round-img my-1' src={avatar} alt='' />
-          <p className='lead my-2 ml-1'>{name}</p>
+          <h3 className='py-2 ml-1'>{name}</h3>
         </div>
       </div>
       <div className='user-actions bg-grey py-1'>

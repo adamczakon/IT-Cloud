@@ -1,11 +1,12 @@
 .landing {
+  position: absolute;
+  height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../img/landing.jpg");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
-  top: 0;
   z-index: 10000;
   min-height: 100%;
 
@@ -23,7 +24,7 @@
     }
 
     .landing-forms {
-      height: 500px;
+      min-height: 500px;
       width: 500px;
       margin-left: 100px;
       display: grid;
@@ -31,7 +32,6 @@
       .forms-navigation {
         background: #fff;
         display: grid;
-        color: $font-secondary;
 
         .navigation-item {
           display: flex;
@@ -56,7 +56,7 @@
 
 @media (max-width: 700px) {
   .landing {
-    background-attachment: fixed;
+    padding-bottom: 800px;
   }
 
   .landing-content {
@@ -100,8 +100,35 @@
     }
   }
 }
+@media (min-width: 701px) and (max-width: 1000px) {
+  .landing {
+    padding: 100px 0;
+  }
 
-@media (min-width: 701px) {
+  .landing-content {
+    display: grid;
+    grid-template-rows: auto auto;
+
+    .landing-header {
+      margin: 0 auto;
+      width: 500px;
+    }
+
+    .landing-forms {
+      margin: 0 auto;
+    }
+
+    .forms-navigation {
+      grid-template-columns: 50% 50%;
+
+      .navigation-item {
+        padding: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1001px) {
   .landing-content {
     display: flex;
     flex-direction: row;

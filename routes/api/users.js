@@ -7,9 +7,8 @@ const config = require("config");
 const jwt = require("jsonwebtoken");
 
 const User = require("../../models/User");
-// @route   Post api/users
-// @desc    REgister user
-// @access  Public
+
+// Register User
 router.post(
   "/",
   [
@@ -17,7 +16,10 @@ router.post(
       .not()
       .isEmpty(),
     check("email", "Please include a valid email").isEmail(),
-    check("password", "Please enter a password with 6 or more characters").isLength({ min: 6 })
+    check(
+      "password",
+      "Please enter a password with 6 or more characters"
+    ).isLength({ min: 6 })
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -63,10 +65,15 @@ router.post(
         }
       };
 
-      jwt.sign(payload, config.get("jwtSecret"), { expiresIn: 360000 }, (err, token) => {
-        if (err) throw err;
-        res.json({ token });
-      });
+      jwt.sign(
+        payload,
+        config.get("jwtSecret"),
+        { expiresIn: 360000 },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
     } catch (err) {
       console.log(err.message);
       res.status(500).send("Server error");

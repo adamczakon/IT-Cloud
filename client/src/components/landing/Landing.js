@@ -7,9 +7,15 @@ import Login from "./Login";
 
 const Landing = ({ isAuthenticated }) => {
   const [loginActive, setLoginActive] = useState(true);
+  const [registerActive, setRegisterActive] = useState(false);
 
-  const toggleOnClick = () => {
-    setLoginActive(!loginActive);
+  const activateLogin = () => {
+    setRegisterActive(false);
+    setLoginActive(true);
+  };
+  const activateRegister = () => {
+    setLoginActive(false);
+    setRegisterActive(true);
   };
 
   if (isAuthenticated) {
@@ -20,8 +26,8 @@ const Landing = ({ isAuthenticated }) => {
 
   let component;
   loginActive
-    ? (component = <Login toggleOnClick={toggleOnClick} />)
-    : (component = <Register toggleOnClick={toggleOnClick} />);
+    ? (component = <Login activateRegister={activateRegister} />)
+    : (component = <Register activateLogin={activateLogin} />);
   return (
     <section className='landing'>
       <div className='landing-content'>
@@ -36,16 +42,18 @@ const Landing = ({ isAuthenticated }) => {
         <div className='landing-forms'>
           <div className='forms-navigation'>
             <div
-              className={`navigation-item border-bottom  border-right ${loginActive &&
+              name='login'
+              className={`navigation-item border-bottom border-right text-secondary ${loginActive &&
                 className}`}
-              onClick={toggleOnClick}
+              onClick={activateLogin}
             >
               <p className='navigation-header'>Login</p>
             </div>
             <div
-              className={`navigation-item border-right ${!loginActive &&
+              name='register'
+              className={`navigation-item border-right text-secondary ${!loginActive &&
                 className} `}
-              onClick={toggleOnClick}
+              onClick={activateRegister}
             >
               <p className='navigation-header '>Register</p>
             </div>

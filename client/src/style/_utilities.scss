@@ -17,7 +17,7 @@
 }
 
 .text-primary {
-  color: $primary-color;
+  color: $primary-color !important;
 }
 
 .text-secondary {
@@ -36,17 +36,26 @@
   font-size: 0.9rem;
 }
 
+.element-hover {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 // Background
 .bg {
   &-primary {
     @include set-background($primary-color);
+  }
+  &-secondary {
+    @include set-background($secondary-color);
   }
   &-light {
     @include set-background($light-color);
     border: #ccc 1px solid;
   }
   &-grey {
-    @include set-background($light-color);
+    @include set-background($grey-color);
   }
   &-dark {
     @include set-background($dark-color);
@@ -64,6 +73,10 @@
 }
 
 // Borders
+.border {
+  border: 1px solid rgba(240, 240, 240, 0.9);
+}
+
 .border-right {
   border-right: 1px solid rgba(240, 240, 240, 0.9);
 }
@@ -87,6 +100,7 @@
   color: #333;
   padding: 0.5rem 1.5rem;
   font-size: 0.8rem;
+  border: none;
   border-radius: 15px;
   cursor: pointer;
   margin-right: 0.5rem;
@@ -142,6 +156,9 @@
   &.badge-primary {
     @include set-background($primary-color);
   }
+  &.badge-secondary {
+    @include set-background($secondary-color);
+  }
   &.badge-dark {
     @include set-background($dark-color);
   }
@@ -159,6 +176,8 @@
   margin: 1rem;
   opacity: 0.9;
   background: $light-color;
+  border-radius: 15px;
+  z-index: 10000;
   color: #333;
 
   &.alert-primary {

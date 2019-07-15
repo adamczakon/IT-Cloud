@@ -15,7 +15,7 @@ const Education = ({ education, deleteEducation }) => {
           class='fas fa-minus-square info-delete'
         />
       </p>
-      <p className=' text-secondary'>
+      <p className='text-secondary'>
         <Moment format='YYYY/MM/DD'>{moment.utc(edu.from)}</Moment> -{" "}
         {edu.to === null ? (
           " Now"

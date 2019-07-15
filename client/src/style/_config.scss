@@ -105,6 +105,9 @@ $spaceamounts: (1, 2, 3, 4, 5);
     padding-left: #{$space}rem;
   }
 
+  .pl {
+    padding-left: 0.5rem;
+  }
   // Right Padding
   .pr-#{$space} {
     padding-right: #{$space}rem;

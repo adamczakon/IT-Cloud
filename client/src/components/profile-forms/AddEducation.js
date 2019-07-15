@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addEducation } from "../../actions/profile";
+import Alert from "../layout/Alert";
 
 const AddEducation = ({ addEducation, history }) => {
   const [formData, setFormData] = useState({
@@ -43,10 +44,10 @@ const AddEducation = ({ addEducation, history }) => {
         }}
       >
         <div className='form-group'>
-          <p className='text-strong mb ml-1'>University</p>
+          <p className='text-strong mb'>University</p>
           <input
             type='text'
-            placeholder='School'
+            placeholder='* School'
             name='school'
             value={school}
             onChange={e => onChange(e)}
@@ -54,7 +55,7 @@ const AddEducation = ({ addEducation, history }) => {
           />
         </div>
         <div className='form-group'>
-          <p className='text-strong mb ml-1'>Degree</p>
+          <p className='text-strong mb'>Degree</p>
           <input
             type='text'
             placeholder='* Degree or Certificate'
@@ -65,17 +66,17 @@ const AddEducation = ({ addEducation, history }) => {
           />
         </div>
         <div className='form-group'>
-          <p className='text-strong mb ml-1'>Field of Study</p>
+          <p className='text-strong mb'>Field of Study</p>
           <input
             type='text'
-            placeholder='Field of Study'
+            placeholder='* Field of Study'
             name='fieldofstudy'
             value={fieldofstudy}
             onChange={e => onChange(e)}
           />
         </div>
         <div className='form-group'>
-          <p className='text-strong mb ml-1'>From</p>
+          <p className='text-strong mb'>*From</p>
           <input
             type='date'
             name='from'
@@ -99,7 +100,7 @@ const AddEducation = ({ addEducation, history }) => {
           </p>
         </div>
         <div className='form-group'>
-          <p className='text-strong mb ml-1'>To</p>
+          <p className='text-strong mb'>To</p>
           <input
             type='date'
             name='to'
@@ -109,7 +110,6 @@ const AddEducation = ({ addEducation, history }) => {
           />
         </div>
         <div className='form-group'>
-          <p className='text-strong mb ml-1'>Description</p>
           <textarea
             name='description'
             cols='30'
@@ -119,13 +119,18 @@ const AddEducation = ({ addEducation, history }) => {
             onChange={e => onChange(e)}
           />
         </div>
-        <button type='submit' className='btn btn-primary my-1 btn-block'>
+        <button
+          type='submit'
+          className='btn btn-primary my-1 btn-block'
+          style={{ padding: "0.8rem" }}
+        >
           Save Changes
         </button>
-        <Link className='btn btn-secondary my-1' to='/dashboard'>
+        <Link className='btn btn-dark my-1' to='/dashboard'>
           Back To Profile
         </Link>
       </form>
+      <Alert />
     </div>
   );
 };

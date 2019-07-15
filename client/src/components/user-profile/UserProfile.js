@@ -24,8 +24,12 @@ const UserProfile = ({
     <Fragment>
       <div className='profile-header bg-dark'>
         <div className='user-info'>
-          <img src={user.avatar} alt='' className='profile-img round-img' />
-          <p className='lead my-2 ml-1'>{user && user.name}</p>
+          <img
+            src={user && user.avatar}
+            alt=''
+            className='profile-img round-img'
+          />
+          <h3 className='py-2 ml-1'>{user && user.name}</h3>
         </div>
       </div>
       {profile !== null ? (
@@ -42,11 +46,13 @@ const UserProfile = ({
         </Fragment>
       ) : (
         <Fragment>
-          <p>
-            You have not yet setup a profile. Add info.{" "}
-            <Link to='/create-profile' className='btn btn-primary my-1'>
-              Create Profile
-            </Link>
+          <p className='mt-2'>
+            You have not yet created a profile.{" "}
+            <p>
+              <Link to='/create-profile' className='btn btn-primary my-1'>
+                Create Profile
+              </Link>
+            </p>
           </p>
         </Fragment>
       )}

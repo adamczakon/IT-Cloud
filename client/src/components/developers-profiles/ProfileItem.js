@@ -22,8 +22,8 @@ const ProfileItem = ({
         <p className='text-secondary'>{location && <span>{location}</span>}</p>
         <p className='my-1'>
           {skills.slice(0, 3).map((skill, i) => (
-            <span key={i} className='badge badge-primary text-primary mr'>
-              {skill}
+            <span key={i} className='badge badge-primary text-strong mr'>
+              {skill.substring(0, 9)}
             </span>
           ))}
         </p>

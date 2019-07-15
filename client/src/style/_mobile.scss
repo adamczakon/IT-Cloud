@@ -32,6 +32,7 @@
   // Profiles grid
   .profiles {
     grid-template-columns: 1fr;
+    padding-bottom: 300px;
 
     .profile {
       width: 100%;
@@ -57,17 +58,19 @@
     grid-column-gap: 10%;
     grid-row-gap: 1rem;
   }
+
+  // Github repos
+  .repos-statistics {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
 }
 
-.round-img {
-  border-radius: 50%;
-}
-
-.profile-img {
-  width: 100px;
-  border: 4px solid $dark-color;
-}
-
-.post-img {
-  width: 75px;
+@media (min-width: 700px) and (max-width: 1000px) {
+  .profiles {
+    grid-template-columns: 1fr 1fr 1fr;
+    .profile {
+      width: 100%;
+    }
+  }
 }

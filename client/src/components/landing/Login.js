@@ -3,8 +3,9 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../../actions/auth";
+import Alert from "../layout/Alert";
 
-const Login = ({ login, isAuthenticated }) => {
+const Login = ({ login, isAuthenticated, activateRegister }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -52,7 +53,10 @@ const Login = ({ login, isAuthenticated }) => {
           Login
         </button>
       </form>
-      <p className='my-1 text-primary'>Don't have an account?</p>
+      <p className='my-1 text-primary element-hover' onClick={activateRegister}>
+        Don't have an account?
+      </p>
+      <Alert />
     </Fragment>
   );
 };
