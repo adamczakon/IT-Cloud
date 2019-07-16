@@ -23,7 +23,7 @@ const ProfileItem = ({
         <p className='my-1'>
           {skills.slice(0, 3).map((skill, i) => (
             <span key={i} className='badge badge-primary text-strong mr'>
-              {skill.substring(0, 9)}
+              {skill.substring(0, 15)}
             </span>
           ))}
         </p>

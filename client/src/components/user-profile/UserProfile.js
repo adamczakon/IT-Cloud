@@ -38,8 +38,12 @@ const UserProfile = ({
           <Experience experience={profile.experience} />
           <Education education={profile.education} />
           <div className='my-2'>
-            <button className='btn btn-danger' onClick={() => deleteAccount()}>
-              <i className='fas fa-user-minus' />
+            <button
+              className='btn btn-danger'
+              style={{ marginLeft: "auto", display: "flex" }}
+              onClick={() => deleteAccount()}
+            >
+              <i className='fas fa-user-minus pr-1' />
               Delete Account
             </button>
           </div>

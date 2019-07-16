@@ -115,8 +115,7 @@ img {
 }
 
 .profile-background {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)),
-    url("../img/sky.jpg");
+  background-color: $secondary-color;
   background-position: center;
   background-size: cover;
 }
@@ -128,7 +127,7 @@ img {
   .btn-action {
     background: $grey-color;
     color: $dark-color;
-    padding: 1rem 0.5rem;
+    padding: 1rem 1rem;
 
     &:hover {
       background: $light-color;
