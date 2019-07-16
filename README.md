@@ -18,8 +18,8 @@ $npm install
 ## Usage
 ```sh
 # go to config/default.json
-# add uri of your mongodb connection,
-# "mongoURI": "mongodb://localhost/dev-social"
+# add uri of your mongodb connection, for example
+# "mongoURI": "mongodb+srv://<user>:<password>@clusternetworkapp-rkpeg.mongodb.net/test?retryWrites=true&w=majority"
 
 //in root folder run both Express and React
 $npm run dev
