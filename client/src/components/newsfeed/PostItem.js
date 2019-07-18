@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
@@ -46,7 +46,7 @@ const PostItem = ({
             <i className='fas fa-thumbs-down' />
           </button>
           <Link to={`/posts/${_id}`} className='btn btn-primary'>
-            <i class='far fa-comments ' />
+            <i className='far fa-comments ' />
             {comments.length > 0 && (
               <span className='comment-count ml'>
                 <span className='pl'>{comments.length}</span>

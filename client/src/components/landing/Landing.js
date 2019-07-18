@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Register from "./Register";
@@ -51,7 +51,7 @@ const Landing = ({ isAuthenticated }) => {
             </div>
             <div
               name='register'
-              className={`navigation-item border-right text-secondary ${!loginActive &&
+              className={`navigation-item border-right text-secondary ${registerActive &&
                 className} `}
               onClick={activateRegister}
             >

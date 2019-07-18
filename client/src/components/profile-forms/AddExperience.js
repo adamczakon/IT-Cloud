@@ -27,7 +27,7 @@ const AddExperience = ({ addExperience, history }) => {
     <Fragment>
       <div className='box p-2'>
         <h3 className='text-primary mb-2'>
-          <i class='fas fa-book-reader mr-1' /> Add Experience
+          <i className='fab fa-black-tie mx' /> Add Experience
         </h3>
         <form
           className='form'

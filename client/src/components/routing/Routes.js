@@ -1,7 +1,5 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Register from "../auth/Register";
-import Login from "../auth/Login";
 import Alert from "../layout/Alert";
 import UserProfile from "../user-profile/UserProfile";
 import CreateProfile from "../profile-forms/CreateProfile";

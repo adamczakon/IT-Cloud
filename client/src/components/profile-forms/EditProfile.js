@@ -46,7 +46,18 @@ const EditProfile = ({
       youtube: loading || !profile.social ? "" : profile.social.youtube,
       instagram: loading || !profile.social ? "" : profile.social.instagram
     });
-  }, [loading, getCurrentProfile]);
+  }, [
+    loading,
+    getCurrentProfile,
+    profile.company,
+    profile.website,
+    profile.location,
+    profile.status,
+    profile.skills,
+    profile.githubusername,
+    profile.social,
+    profile.bio
+  ]);
 
   const {
     company,
@@ -73,7 +84,7 @@ const EditProfile = ({
 
   return (
     <div className='box p-2'>
-      <h3 className='text-primary mb-2'>
+      <h3 className='text-primary mb-2 mx'>
         <i className='fas fa-user mr-1' /> Edit Your Profile
       </h3>
       <form className='form' onSubmit={e => onSubmit(e)}>

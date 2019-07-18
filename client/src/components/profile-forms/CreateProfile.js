@@ -46,7 +46,7 @@ const CreateProfile = ({ createProfile, history }) => {
 
   return (
     <div className='box p-2'>
-      <h3 className='text-primary mb-2'>
+      <h3 className='text-primary mx'>
         <i class='fas fa-user mr' /> Create Your Profile
       </h3>
       <form className='form' onSubmit={e => onSubmit(e)}>

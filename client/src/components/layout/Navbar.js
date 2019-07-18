@@ -9,13 +9,13 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <ul>
       <li>
         <Link to='/posts'>
-          <i class='far fa-newspaper px' />{" "}
+          <i className='far fa-newspaper px' />{" "}
           <span className='hide-sm'>Newsfeed</span>
         </Link>
       </li>
       <li>
         <Link to='/profiles'>
-          <i class='fas fa-users px' />{" "}
+          <i className='fas fa-users px' />{" "}
           <span className='hide-sm'>Developers</span>
         </Link>
       </li>
@@ -52,7 +52,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar bg-secondary'>
       <h1>
         <Link to='/'>
-          <i class='fas fa-cloud-meatball mr-1' /> IT Cloud
+          <i className='fas fa-cloud-meatball mr-1' /> IT Cloud
         </Link>
       </h1>
       {!loading && (

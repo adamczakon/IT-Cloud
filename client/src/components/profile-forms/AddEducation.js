@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -34,7 +34,7 @@ const AddEducation = ({ addEducation, history }) => {
   return (
     <div className='box p-2'>
       <h3 className='text-primary mb-2'>
-        <i class='fas fa-book-reader mr' /> Add Education
+        <i className='fas fa-book-reader mx' /> Add Education
       </h3>
       <form
         className='form'

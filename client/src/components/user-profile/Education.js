@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Moment from "react-moment";
 import moment from "moment";
@@ -12,7 +12,7 @@ const Education = ({ education, deleteEducation }) => {
         {edu.school}{" "}
         <i
           onClick={() => deleteEducation(edu._id)}
-          class='fas fa-minus-square info-delete'
+          className='fas fa-minus-square info-delete'
         />
       </p>
       <p className='text-secondary'>

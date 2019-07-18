@@ -50,13 +50,11 @@ const UserProfile = ({
         </Fragment>
       ) : (
         <Fragment>
-          <p className='mt-2'>
-            You have not yet created a profile.{" "}
-            <p>
-              <Link to='/create-profile' className='btn btn-primary my-1'>
-                Create Profile
-              </Link>
-            </p>
+          <p className='mt-2'>You have not yet created a profile. </p>
+          <p>
+            <Link to='/create-profile' className='btn btn-primary my-1'>
+              Create Profile
+            </Link>
           </p>
         </Fragment>
       )}
