@@ -54,6 +54,17 @@ const Register = ({ setAlert, register, isAuthenticated, activateLogin }) => {
             onChange={e => onChange(e)}
             required
           />
+          <small className='form-text'>
+            If you want a profile image, use a{" "}
+            <a
+              href='https://gravatar.com'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              gravatar email
+            </a>
+            .
+          </small>
         </div>
         <div className='form-group'>
           <input
