@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import Moment from "react-moment";
 import moment from "moment";
@@ -6,15 +6,32 @@ import { connect } from "react-redux";
 import { deleteExperience } from "../../actions/profile";
 
 const Experience = ({ experience, deleteExperience }) => {
+  const [buttonId, setButtonId] = useState();
+
+  const setId = id => {
+    buttonId !== id ? setButtonId(id) : setButtonId("");
+  };
+
   const experiences = experience.map(exp => (
     <div className='p-2' key={exp._id}>
-      <p className='text-strong info-title'>
-        {exp.company}
-        <i
-          className='fas fa-minus-square info-delete'
-          onClick={() => deleteExperience(exp._id)}
-        />
-      </p>
+      <div className='info-title'>
+        <div>
+          <p className='text-strong'>{exp.company}</p>
+        </div>
+        <div className='info-dots text-secondary'>
+          <p className='element-hover' onClick={setId.bind(this, exp._id)}>
+            ...
+          </p>
+          <div className={buttonId !== exp._id ? "hidden" : "delete-wrapper"}>
+            <p
+              className='text-secondary info-delete'
+              onClick={() => deleteExperience(exp._id)}
+            >
+              Delete
+            </p>
+          </div>
+        </div>
+      </div>
 
       <p className='text-secondary'>
         <Moment format='YYYY/MM/DD'>{moment.utc(exp.from)}</Moment> -{" "}

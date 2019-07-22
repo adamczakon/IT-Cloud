@@ -50,11 +50,43 @@ img {
   grid-template-columns: 50% 50%;
 }
 
-.info-delete {
-  margin-left: auto;
-  color: $primary-color;
-  &:hover {
-    cursor: pointer;
+.info-title {
+  position: relative;
+}
+
+.info-dots {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+  right: 0;
+  color: $secondary-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+  .hidden {
+    display: none;
+  }
+
+  .delete-wrapper {
+    background: #fff;
+    border: 1px solid rgba($font-secondary, 0.3);
+    padding: 1rem 3rem;
+    top: 2rem;
+    right: 0;
+    position: absolute;
+
+    .info-delete {
+      font-size: 0.8rem;
+      transition: color 0.3s ease-out;
+
+      &:hover {
+        cursor: pointer;
+        color: $danger-color;
+      }
+    }
   }
 }
 

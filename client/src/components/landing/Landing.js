@@ -36,7 +36,7 @@ const Landing = ({ isAuthenticated }) => {
           <p>
             IT Cloud was created to connect developers from around the world.
             Create your profile, add some info about yourself and intearct with
-            other people who share same passion as you.
+            other people who share the same passion as you.
           </p>
         </div>
         <div className='landing-forms'>
