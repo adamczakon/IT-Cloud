@@ -1,5 +1,5 @@
 {
-  "mongoURI": "mongodb+srv://ada63:ada63@clusternetworkapp-rkpeg.mongodb.net/test?retryWrites=true&w=majority",
+  "mongoURI": "",
   "jwtSecret": "mySecretToken",
   "githubClientId": "4cdd6bacc441351bf6c9",
   "githubSecret": "13a14925fcd5ee30c088a2b4181859af187d66ed"
